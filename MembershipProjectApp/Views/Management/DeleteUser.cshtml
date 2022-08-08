@@ -1,0 +1,64 @@
+﻿@model MembershipProjectApp.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "DeleteUser";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+
+<div class="border p-1">
+    <div class="card card-danger m-3">
+        <div class="card-header">
+            <h3 class="card-title">Delete the selected user record !!!</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="row border p-2">
+                    <div class="col-6">
+                        <span class="col-6 font-weight-bolder">
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </span>
+                        <span class="col-6">
+                            @Html.DisplayFor(model => model.FullName)
+                        </span>
+                    </div>
+                    <div class="col-6 border-left">
+                        <span class="col-6 font-weight-bolder">
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </span>
+                        <span class="col-6">
+                            @Html.DisplayFor(model => model.UserName)
+                        </span>
+                    </div>
+                </div>
+                <div class="row border p-2">
+                    <div class="col-6 border-left">
+                        <span class="col-6 font-weight-bolder">
+                            @Html.DisplayNameFor(model => model.Contact)
+                        </span>
+                        <span class="col-6">
+                            @Html.DisplayFor(model => model.Contact)
+                        </span>
+                    </div>
+                    <div class="col-6 border-left">
+                        <span class="col-6 font-weight-bolder">
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </span>
+                        <span class="col-6">
+                            @Html.DisplayFor(model => model.Gender)
+                        </span>
+                    </div>
+                </div>
+                <div class="row col-6 col-sm-6 mt-3">
+                    <div class="col-6">
+                        <a asp-controller="Management" asp-action="UserList" class="btn btn-secondary form-control"><i class="fas fa-fast-backward"></i> &nbsp; Back</a>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-danger form-control"><i class="fas fa-trash"></i> &nbsp; Delete?</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

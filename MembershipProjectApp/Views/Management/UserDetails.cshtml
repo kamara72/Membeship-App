@@ -1,0 +1,58 @@
+﻿@model MembershipProjectApp.Models.ApplicationUser
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+
+<div class="border p-1">
+    <div class="card card-success m-3">
+        <div class="card-header">
+            <h3 class="card-title">User Details</h3>
+        </div>
+        <div class="card-body">
+            <div class="row border p-2">
+                <div class="col-6">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.FullName)
+                    </span>
+                </div>
+                <div class="col-6 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.UserName)
+                    </span>
+                </div>                
+            </div>
+            <div class="row border p-2">
+                <div class="col-6 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Contact)
+                    </span>
+                </div>
+                <div class="col-6 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Gender)
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">
+            <a asp-action="Userlist" class="btn btn-sm btn-secondary"><i class="fas fa-fast-backward"></i>&nbsp;Back</a>
+            <a asp-action="EditUser" asp-route-id="@Model.Id" class="btn btn-sm btn-success"><i class="fas fa-edit"></i>&nbsp;Edit</a>
+        </div>
+    </div>
+</div>
+

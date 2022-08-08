@@ -1,0 +1,77 @@
+﻿@model MembershipProjectApp.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+
+<div class="border p-1">
+    <div class="card card-success m-3">
+        <div class="card-header">
+            <h3 class="card-title">Edit the selected user record</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="EditUser">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" hidden />
+                <div class="row border p-3">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="FullName"></label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="Gender"></label>
+                            <input asp-for="Gender" class="form-control" />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="Contact"></label>
+                            <input asp-for="Contact" class="form-control" />
+                            <span asp-validation-for="Contact" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="mt-3">Login Information</h5>
+                <div class="row border p-3">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    @*<div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword"></label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="row col-6 col-sm-6 mt-3">
+                    <div class="col-6">
+                        <a asp-controller="Management" asp-action="UserList" class="btn btn-secondary form-control"><i class="fas fa-fast-backward"></i> &nbsp; Back</a>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-primary form-control"><i class="fas fa-save"></i> &nbsp; Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

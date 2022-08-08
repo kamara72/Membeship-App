@@ -1,0 +1,113 @@
+﻿@model IEnumerable<MembershipProjectApp.Models.EditUserViewModel>
+
+@{
+    ViewData["Title"] = "MemberList";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+    int cnt = 0;
+}
+
+<link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="~/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="~/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+<div class="border p-1">
+    <div class="row p-3">
+        <div class="col-10">
+            <h4 class="font-weight-bolder">Users Listing</h4>
+        </div>
+        <div class="col-2 text-primary">
+            <a asp-controller="Management" asp-action="CreateUser" class="btn btn-primary form-control"><i class="fas fa-plus-circle"></i>&nbsp; Add New</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            No.
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contact)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th class="text-center">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <span>@String.Format("{0}.", ++cnt)</span>
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Contact)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td class="text-center">
+                                <a asp-action="UserDetails" asp-route-id="@item.Id" class="text-secondary"><i class="fas fa-info-circle"></i></a> |
+                                <a asp-action="EditUser" asp-route-id="@item.Id" class="text-success"><i class="fas fa-edit"></i></a> |
+                                <a asp-action="DeleteUser" asp-route-id="@item.Id" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="~/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="~/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="~/plugins/jszip/jszip.min.js"></script>
+<script src="~/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="~/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="~/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="~/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="~/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+

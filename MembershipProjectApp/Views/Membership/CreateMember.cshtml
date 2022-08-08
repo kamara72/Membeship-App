@@ -1,0 +1,384 @@
+﻿@model MembershipProjectApp.Models.MembershipModel
+
+@{
+    ViewData["Title"] = "CreateMember";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+
+<div class="border p-1">
+    <div class="card card-success m-3">
+        <div class="card-header">
+            <h3 class="card-title">Add new Member</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form asp-controller="Membership" asp-action="CreateMember">
+                <div class="row border p-1">
+                    <h3 class="col-sm-12 mb-3">Basic Informations</h3>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="MiddleName"></label>
+                            <input asp-for="MiddleName" class="form-control">
+                            <span asp-validation-for="MiddleName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Ethnicity"></label>
+                            <select asp-for="Ethnicity" class="form-control">
+                                <option value="">Select...</option>
+                                <option value="Mandingo">Mandingo</option>
+                                <option value="Bassa">Bassa</option>
+                                <option value="Dei">Dei</option>
+                                <option value="Gio">Gio</option>
+                                <option value="Grebo">Grebo</option>
+                                <option value="Lorma">Lorma</option>
+                                <option value="Mano">Mano</option>
+                                <option value="Gbandi">Gbandi</option>
+                                <option value="Mande">Mande</option>
+                                <option value="Kissi">Kissi</option>
+                                <option value="Kpelle">Kpelle</option>
+                                <option value="Sapo">Sapo</option>
+                                <option value="Kru">Kru</option>
+                                <option value="Krahn">Krahn</option>
+                                <option value="Vai">Vai</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <span asp-validation-for="Ethnicity" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Contact"></label>
+                            <input asp-for="Contact" class="form-control">
+                            <span asp-validation-for="Contact" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Occupation"></label>
+                            <input asp-for="Occupation" class="form-control">
+                            <span asp-validation-for="Occupation" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Position"></label>
+                            <input asp-for="Position" class="form-control">
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border p-1 mt-2">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Gender"></label> :<br />
+                            <ul>
+                                <li>
+                                    Male: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Gender" value="Male" />
+                                </li>
+                                <li>
+                                    Female: &nbsp;<input type="radio" asp-for="Gender" value="Female" />
+                                </li>
+                                <li>
+                                    N/A: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Gender" value="Not Applicable" />
+                                </li>
+                            </ul>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 border-left">
+                        <div class="form-group">
+                            <label asp-for="Category"></label> :<br />
+                            <ul>
+                                <li>
+                                    County: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Category" value="County" />
+                                </li>
+                                <li>
+                                    Individual: &nbsp;<input type="radio" asp-for="Category" value="Individual" />
+                                </li>
+                                <li>
+                                    Diaspora: &nbsp;&nbsp;<input type="radio" asp-for="Category" value="Diaspora" />
+                                </li>
+                                <li>
+                                    Honorary: &nbsp;<input type="radio" asp-for="Category" value="Honorary" />
+                                </li>
+                            </ul>
+                            <span asp-validation-for="Category" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 border-left">
+                        <div class="form-group">
+                            <label asp-for="Membership"></label> : <br />
+                            <ul>
+                                <li>
+                                    New Member: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Membership" value="New Member" />
+                                </li>
+                                <li>
+                                    Existing Member: &nbsp;&nbsp;<input type="radio" asp-for="Membership" value="Existing Member" />
+                                </li>
+                                <li>
+                                    Founding Member: <input type="radio" asp-for="Membership" value="Founding Member" />
+                                </li>
+                            </ul>
+                            <span asp-validation-for="Membership" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 border-left">
+                        <div class="form-group">
+                            <label asp-for="MaritalStatus"></label> : <br />
+                            <ul>
+                                <li>
+                                    Single: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="MaritalStatus" value="Single" />
+                                </li>
+                                <li>
+                                    Married: &nbsp;&nbsp;&nbsp;<input type="radio" asp-for="MaritalStatus" value="Married" />
+                                </li>
+                                <li>
+                                    Divorced: &nbsp;<input type="radio" asp-for="MaritalStatus" value="Divorced" />
+                                </li>
+                                <li>
+                                    Widow: &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="MaritalStatus" value="Widow" />
+                                </li>
+                                <li>
+                                    Widower: &nbsp;<input type="radio" asp-for="MaritalStatus" value="Widower" />
+                                </li>
+                                <li>
+                                    N/A: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="MaritalStatus" value="Not Applicable" />
+                                </li>
+                            </ul>
+                            <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row border p-2 mt-2">
+                    <h3 class="col-sm-12 mb-3">Background</h3>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="CountyOfOrigin"></label>
+                            <select class="form-control" asp-for="CountyOfOrigin">
+                                <option value="">Select...</option>
+                                <option value="Bong">Bong</option>
+                                <option value="Bomi">Bomi</option>
+                                <option value="Gbarpolu">Gbarpolu</option>
+                                <option value="">Grand Bassa</option>
+                                <option value="Grand Bassa">Grand Cape Mount</option>
+                                <option value="Grand Gedeh">Grande Gedeh</option>
+                                <option value="Grand Kru">Grand Kru</option>
+                                <option value="Lofa">Lofa</option>
+                                <option value="Margibi">Margibi</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Montserrado">Montserrado</option>
+                                <option value="Nimba">Nimba</option>
+                                <option value="Rivercess">Rivercess</option>
+                                <option value="Rivergee">Rivergee</option>
+                                <option value="Sinoe">Sinoe</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <span asp-validation-for="CountyOfOrigin" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="CountyOfResidence"></label>
+                            <select class="form-control" asp-for="CountyOfResidence">
+                                <option value="">Select...</option>
+                                <option value="Bong">Bong</option>
+                                <option value="Bomi">Bomi</option>
+                                <option value="Gbarpolu">Gbarpolu</option>
+                                <option value="">Grand Bassa</option>
+                                <option value="Grand Bassa">Grand Cape Mount</option>
+                                <option value="Grand Gedeh">Grande Gedeh</option>
+                                <option value="Grand Kru">Grand Kru</option>
+                                <option value="Lofa">Lofa</option>
+                                <option value="Margibi">Margibi</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Montserrado">Montserrado</option>
+                                <option value="Nimba">Nimba</option>
+                                <option value="Rivercess">Rivercess</option>
+                                <option value="Rivergee">Rivergee</option>
+                                <option value="Sinoe">Sinoe</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <span asp-validation-for="CountyOfResidence" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label asp-for="Education"></label>
+                            <select class="form-control" asp-for="Education">
+                                <option value="">Select...</option>
+                                <option value="Drop out">Drop out</option>
+                                <option value="High School">High School</option>
+                                <option value="Udergraduate">Udergraduate</option>
+                                <option value="BSc">BSc</option>
+                                <option value="Master">Master</option>
+                                <option value="PHD">LLB</option>
+                                <option value="PHD">PHD</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <span asp-validation-for="Education" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-4">-->
+                        <!-- Select multiple-->
+                        <!--<div class="form-group">
+                            <label asp-for="Language"></label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul>
+                                        <li>
+                                            Arabic &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Language" value="Arabic" />
+                                        </li>
+                                        <li>
+                                            English &nbsp;&nbsp;<input type="radio" asp-for="LanguageTwo" value="English" />
+                                        </li>
+                                        <li>
+                                            French &nbsp;&nbsp;&nbsp;<input type="radio" asp-for="LanguageThree" value="French" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 border-left">
+                                    <ul>
+                                        <li>
+                                            Mandingo &nbsp;&nbsp;&nbsp;<input type="radio" asp-for="Dialect" value="Mandingo" />
+                                        </li>
+                                        <li>
+                                            Vai &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="DialectTwo" value="vai" />
+                                        </li>
+                                        <li>
+                                            Other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" asp-for="OtherDialectandLanguage" value="Other" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="col-sm-4">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="Language"></label>
+                            <textarea asp-for="Language" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Language" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="Address"></label>
+                            <textarea asp-for="Address" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border p-2 mt-2">
+                    <h3 class="col-sm-12 mb-3">Registration Type</h3>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="PreRegistration"></label>
+                            <select class="form-control" asp-for="PreRegistration">
+                                <option value="">Select...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Registration"></label>
+                            <select class="form-control" asp-for="Registration">
+                                <option value="">Select...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Person"></label>
+                            <select class="form-control" asp-for="Person">
+                                <option value="">Select...</option>
+                                <option value="Single">Single</option>
+                                <option value="Couple">Couple</option>
+                                <option value="Family">Family</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="NumberOfPerson"></label>
+                            <input asp-for="NumberOfPerson" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row border p-2 mt-2">
+                    <h3 class="col-sm-12 mb-3">Payment Informations</h3>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="IDNumber"></label>
+                            <input asp-for="IDNumber" class="form-control">
+                            <span asp-validation-for="IDNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="ReceiptNumber"></label>
+                            <input asp-for="ReceiptNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Payment"></label>
+                            <input asp-for="Payment" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label asp-for="Balance"></label>
+                            <input asp-for="Balance" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="Mosque"></label>
+                            <textarea asp-for="Mosque" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Mosque" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row col-6 col-sm-6 mt-3">
+                        <div class="col-6">
+                            <a asp-controller="Membership" asp-action="MemberList" class="btn btn-secondary form-control"><i class="fas fa-fast-backward"></i> &nbsp; Back</a>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary form-control"><i class="fas fa-save"></i> &nbsp; Save</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+   </div>

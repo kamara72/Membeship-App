@@ -1,0 +1,243 @@
+﻿@model MembershipProjectApp.Models.MembershipModel
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+
+<div class="border p-1">
+    <div class="card card-success m-3">
+        <div class="card-header">
+            <h3 class="card-title">Member Details</h3>
+        </div>
+        <div class="card-body">
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.FirstName)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.MiddleName)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.MiddleName)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.LastName)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Occupation)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Occupation)
+                    </span>
+
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Contact)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Email)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Gender)
+                    </span>
+
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Education)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Education)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Membership)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Membership)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Position)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Position)
+                    </span>
+
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.CountyOfOrigin)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.CountyOfOrigin)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Category)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Category)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Ethnicity)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Ethnicity)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.CountyOfResidence)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.CountyOfResidence)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.MaritalStatus)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.MaritalStatus)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Mosque)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Mosque)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.PreRegistration)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.PreRegistration)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Registration)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Registration)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.ReceiptNumber)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.ReceiptNumber)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Payment)
+                    </span>
+                    <span class="col-6">
+                        $@Html.DisplayFor(model => model.Payment)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Balance)
+                    </span>
+                    <span class="col-6">
+                        $@Html.DisplayFor(model => model.Balance)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-4">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Person)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Person)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.NumberOfPerson)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.NumberOfPerson)
+                    </span>
+                </div>
+                <div class="col-4 border-left">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Ethnicity)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Ethnicity)
+                    </span>
+                </div>
+            </div>
+            <div class="row border p-2">
+                <div class="col-12">
+                    <span class="col-6 font-weight-bolder">
+                        @Html.DisplayNameFor(model => model.Language)
+                    </span>
+                    <span class="col-6">
+                        @Html.DisplayFor(model => model.Language)
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">
+            <a asp-action="Memberlist" class="btn btn-sm btn-secondary"><i class="fas fa-fast-backward"></i>&nbsp;Back</a>
+            <a asp-action="EditMember" asp-route-id="@Model.MemberId" class="btn btn-sm btn-success"><i class="fas fa-edit"></i>&nbsp;Edit</a>
+        </div>
+    </div>
+</div>
+
